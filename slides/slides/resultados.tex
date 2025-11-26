@@ -1,0 +1,269 @@
+\section{Resultados}
+
+
+
+% - Tabelas do modelo
+\newcommand{\TabelaDadosModelo}{
+    \begin{tabular}{llccc}
+        \toprule
+        \textbf{Cidade} & \textbf{Target} & \textbf{MAE} & \textbf{RMSE} & \textbf{R} \\ 
+        \midrule
+        \multirow{3}{*}{Touba} 
+          & dhi\_rsi & 77,51 & 118,67 & 0,58 \\ 
+          & ghi\_pyr & 106,79 & 177,72 & 0,85 \\ 
+          & ghi\_sil & 74,93 & 116,16 & 0,88 \\ 
+        \midrule
+        \multirow{3}{*}{Fatick} 
+          & dhi\_rsi & 68,32 & 112,16 & 0,62 \\ 
+          & ghi\_pyr & 65,26 & 114,51 & 0,88 \\ 
+          & ghi\_sil & 77,87 & 128,63 & 0,86 \\ 
+        \midrule
+        SA Northern Cape    & GSR & 58,81 & 104,26 & 0,89 \\ 
+        CAR Vakaga          & GSR & 69,52 & 131,87 & 0,78 \\ 
+        Egypt Mut           & GSR & 90,37 & 130,61 & 0,86 \\ 
+        Algeria Tamanrasset & GSR & 52,94 & 105,69 & 0,88 \\ 
+        Nigeria Borno       & DSR & 21,64 & 36,64 & 0,89 \\
+        \midrule
+        Abuja               & DNI &  38.88 & 54.75 & 0.74 \\
+        Akure               & DNI &  32.49 & 46.94 & 0.68 \\
+        \bottomrule
+    \end{tabular}
+}
+
+% - Tabela do Arigo
+\newcommand{\TabelaDadosArtigo}{
+    \begin{tabular}{llccc}
+        \toprule
+        \textbf{Cidade} & \textbf{Target} & \textbf{MAE} & \textbf{RMSE} & \textbf{R} \\ 
+        \midrule
+        \multirow{3}{*}{Touba} 
+          & dhi\_rsi &  75.13 & 105.44 & 0.78 \\ 
+          & ghi\_pyr & 124.74 & 191.48 & 0.82 \\ 
+          & ghi\_sil & 124.50 & 188.48 & 0.80 \\ 
+        \midrule
+        \multirow{3}{*}{Fatick} 
+          & dhi\_rsi & 86.71 & 124.11 & 0.70 \\ 
+          & ghi\_pyr & 144.44 & 206.88 & 0.79 \\ 
+          & ghi\_sil & 147.88 & 203.41 & 0.78 \\ 
+        \midrule
+        SA Northern Cape    & GSR &  34.67 & 93.50 & 0.97 \\ 
+        CAR Vakaga          & GSR &  45.56 & 95.94 & 0.96 \\ 
+        Egypt Mut           & GSR &  26.13 & 63.62 & 0.99 \\ 
+        Algeria Tamanrasset & GSR & 27.59 & 81.96 & 0.98 \\ 
+        Nigeria Borno       & DSR &  19.44 & 49.34 & 0.90 \\ 
+        \midrule
+        Abuja               & DNI &  42.70 & 55.93 & 0.78 \\
+        Akure               & DNI &  19.11 & 25.15 & 0.95 \\
+        \bottomrule
+    \end{tabular}
+}
+
+
+\subsection{Análise Comparativa Numérica}
+% --- SLIDE 3: Métricas do modelo ---
+%\begin{frame}{Métricas por Cidade (Modelo)}
+%    \begin{table}[]
+%        \centering
+%        % O resizebox ajusta a tabela para caber na largura do slide
+%        \resizebox{\textwidth}{!}{\TabelaDadosModelo}
+%    \end{table}
+%\end{frame}
+%
+% --- SLIDE 4: Métricas do artigo ---
+%\begin{frame}{Métricas por Cidade (Artigo)}
+%   \begin{table}[]
+%        \centering
+%        % O resizebox ajusta a tabela para caber na largura do slide
+%        \resizebox{\textwidth}{!}{{\TabelaDadosArtigo}}
+%    \end{table}
+%\end{frame}
+
+
+% --- SLIDE 5: Comparação de Métricas de Cidades do Modelo com o Artigo ---
+
+\begin{frame}{Comparação de Métricas por Cidade}
+
+    \begin{block}{}
+        A configuração imediata que tivemos foi: ADAM, sem normalização nem ativação sigmoide e lr=1e-3. A primeira execução resultou em:
+    \end{block}
+    \vspace{0.2cm}
+    
+    % --- Lado Esquerdo ---
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \textbf{Resultados (Modelo)}
+        \vspace{0.2cm}
+        
+        \resizebox{\textwidth}{!}{ \TabelaDadosModelo } 
+    \end{minipage}
+    \hfill
+    % --- Lado Direito ---
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \textbf{Resultados (Artigo)}
+        \vspace{0.2cm}
+        
+        \resizebox{\textwidth}{!}{ \TabelaDadosArtigo }
+    \end{minipage}
+
+\end{frame}
+
+\begin{frame}{Comparação de Métricas por Cidade}
+
+    \begin{block}{}
+        Já a nossa melhor execução, dentre todas as testadas foi:
+        (ATUALIZAR ESSA TABELA)
+    \end{block}
+    \vspace{0.2cm}
+    
+    % --- Lado Esquerdo ---
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \textbf{Resultados (Modelo)}
+        \vspace{0.2cm}
+        
+        \resizebox{\textwidth}{!}{ \TabelaDadosModelo } 
+    \end{minipage}
+    \hfill
+    % --- Lado Direito ---
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \textbf{Resultados (Artigo)}
+        \vspace{0.2cm}
+        
+        \resizebox{\textwidth}{!}{ \TabelaDadosArtigo }
+    \end{minipage}
+
+\end{frame}
+
+
+% ------- Comparação entre graficos Tamanrasset Exemplo TMY -------
+\subsection{Comparação entre gráficos}
+
+\begin{frame}{Comparação de Métricas por Dataset - TMY}
+
+    % ----- Texto no topo -----
+        Comparação entre o gráfico apresentado no artigo e o gráfico gerado pela nossa execução. Aqui: Predição de GSR na cidade de Tamanrasset. \\
+        >SGD, normalização e  lr=1e-4
+    % ----- Imagem do Artigo (em cima) -----
+    \begin{center}
+        \textbf{Gráfico do Artigo}\\[0.01cm]
+        \includegraphics[width=0.57\textwidth]{imagens/grafico_tamanrasset_artigo.png}
+    \end{center}
+    % ----- Nossa Imagem (embaixo) -----
+    \begin{center}
+        \textbf{Nosso Gráfico}\\[0.05cm]
+        \includegraphics[width=0.57\textwidth]{Algeria Tamanrasset_GSR_sgd_0.0001.png}
+    \end{center}
+
+\end{frame}
+
+
+% ------- Comparação entre graficos Abuja  Exemplo do SARAH ------
+\begin{frame}{Comparação de Métricas por Dataset - SARAH}
+
+    % ----- Texto no topo -----
+    Comparando o gráfico do artigo com nossos resultados. Cidade de Abuja na Nigéria, prevendo DNI. \\
+    >ADAM, normalização e  lr=1e-4
+    % ----- Imagem do Artigo (em cima) -----
+    \begin{center}
+        \textbf{Gráfico do Artigo}\\[0.01cm]
+        \includegraphics[width=0.61\textwidth]{grafico_artigo_nigeria_abuja_daily.png}
+    \end{center}
+    %\vspace{0.1cm}
+    % ----- Nossa Imagem (embaixo) -----
+    \begin{center}
+        \textbf{Nosso Gráfico}\\[0.05cm]
+        \includegraphics[width=0.61\textwidth]{Nigeria Abuja_DNI_adam_0.0001.png}
+    \end{center}
+
+\end{frame}
+
+% ------- Comparação entre graficos Abuja  Exemplo do WB-ESMAP ------
+\begin{frame}{Comparação de Métricas por Dataset - WB-ESMAP}
+
+    % ----- Texto no topo -----
+        Comparando o gráfico do artigo com nossos resultados. Cidade de Touba em Senegal, prevendo GHI pyr \\
+        >ADAM, normalização e  lr=1e-3
+    % ----- Imagem do Artigo (em cima) -----
+    \begin{center}
+        \textbf{Gráfico do Artigo}\\[0.01cm]
+        \includegraphics[width=0.55\textwidth]{grafico_touba_ghi_pyr.png}
+    \end{center}
+    % ----- Nossa Imagem (embaixo) -----
+    \begin{center}
+        \textbf{Nosso Gráfico}\\[0.05cm]
+        \includegraphics[width=0.55\textwidth]{imagens/Touba_ghi_pyr_adam_0.001.png}
+    \end{center}
+
+\end{frame}
+
+% ----- Comparação sigmoide e sem ----------
+\begin{frame}{Comparação dos Modelos — Saída Linear vs Sigmoide}
+
+    % ----- Texto no topo -----
+    %\begin{block}{}
+        Os modelos com sigmoide geram curvas “achatadas” e incapazes de seguir a variação verdadeira. Isso, em todas as execuções.\\
+        > Previsão de GHI pyt em Fatick, uso de SGD, normlaização e lr=5e-4
+    %\end{block}
+    % ----- Imagem do Artigo (em cima) -----
+    \begin{center}
+        \textbf{Redesem ativação Sigmoide}\\[0.01cm]
+        \includegraphics[width=0.61\textwidth]{imagens/Fatick_ghi_pyr_sgd_0.0005_linear.png}
+    \end{center}
+    % ----- Nossa Imagem (embaixo) -----
+    \begin{center}
+        \textbf{Rede com ativação Sigmoide}\\[0.05cm]
+        \includegraphics[width=0.61\textwidth]{Fatick_ghi_pyr_sgd_0.0005_sigmoide.png}
+    \end{center}
+
+\end{frame}
+
+% ----- usou ou não de normalização
+\begin{frame}{Uso ou não de normalização}
+\begin{itemize}
+        \item Tamanho aproximado: \textbf{12 mil linhas}
+        \item \textbf{Cidades}: Akure e Abuja (Nigeria)
+    \end{itemize}
+\end{frame}
+
+
+% --- Função para chamar a imagem diretamente
+\newcommand{\CardImagem}[2]{
+    \centering
+    % A imagem ocupa a largura disponível (do minipage ou do slide)
+    \includegraphics[width=\textwidth]{#1} 
+    
+    \vspace{0.1cm}
+    
+    % A legenda em itálico e pequena
+    \footnotesize{\textit{#2}}
+}
+
+% --- SLIDE 6: Gráficos de comparação ---
+\subsection{Análise Visual e Gráfica}
+\begin{frame}{Comparação Visual dos Resultados}
+
+    
+    % --- Lado Esquerdo (Seu Modelo) ---
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \textbf{Resultados (Nosso Modelo)}
+        \vspace{0.2cm} % Um pequeno espaço entre o título e a imagem
+        
+        % Chama o comando da sua imagem
+        \CardImagem{test.jpg}{Teste}
+        
+    \end{minipage}
+    \hfill % Espaço flexível no meio
+    % --- Lado Direito (Artigo) ---
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \textbf{Resultados (Artigo Base)}
+        \vspace{0.2cm} % Um pequeno espaço entre o título e a imagem
+        
+        % Chama o comando da imagem do artigo
+    \end{minipage}
+
+\end{frame}
+

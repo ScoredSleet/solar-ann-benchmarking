@@ -1,0 +1,309 @@
+\section{Metodologia}
+
+\subsection{Ambiente Computacional e Arquitetura}
+
+\begin{frame}{Arquitetura do Artigo: Artificial Neural Network (ANN)}
+
+    \begin{columns}[t]
+        % --- COLUNA 1: Parâmetros de Treinamento ---
+        \begin{column}{0.48\textwidth}
+            \begin{block}{Parâmetros de Treinamento}
+                \begin{itemize}
+                    \item \textbf{Framework:} Python TensorFlow \& Keras API.
+                    \item \textbf{Otimizador:} \textbf{Adam} (Adaptive Moment Estimation).
+                    \item \textbf{Função de Perda:} \textbf{MSE} Média dos erros quadrados dos valores preditos e alvos
+                    \item \textbf{Hardware:} Core i7, 2.20 GHz sistema com 16 GB RAM e GTX1060 6 GB.
+                \end{itemize}
+            \end{block}
+        \end{column}
+
+        % --- COLUNA 2: Estrutura da Rede ---
+        \begin{column}{0.48\textwidth}
+            \begin{block}{Topologia da Rede}
+                \begin{itemize}
+                    \item \textbf{Ativação (Oculta):} \textbf{ReLU} ($f(x) = \max(0,x)$), escolhida para garantir não-linearidade e convergência rápida.
+                    \item \textbf{Ativação (Saída):} \textbf{Sigmoid} ($ f(x) = \frac{1}{1 + \mathrm{e}^{-x}} $) para modelar a distribuição de probabilidade.
+                \end{itemize}
+            \end{block}
+        \end{column}
+        
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Arquitetura do Modelo: Artificial Neural Network (ANN)}
+    \begin{columns}[t]
+    
+        % --- COLUNA 1: Parâmetros de Treinamento ---
+        \begin{column}{0.48\textwidth}
+            \begin{block}{Parâmetros de Treinamento}
+                \begin{itemize}
+                    \item \textbf{Framework:} Python PyTorch.
+                    \item \textbf{Otimizador:} \textbf{Adam} (Adaptive Moment Estimation).
+                    \item \textbf{Função de Perda:} \textbf{MSE} Média dos erros quadrados dos valores preditos e alvos
+                    \item \textbf{Hardware:} Google Colab com Intel Xeon @ 2.00GHz ou 2.20GHz, 12.7 GB Ram  e NVIDIA T4/K80 .
+                \end{itemize}
+            \end{block}
+        \end{column}
+
+        % --- COLUNA 2: Estrutura da Rede ---
+        \begin{column}{0.48\textwidth}
+            \begin{block}{Topologia da Rede}
+                \begin{itemize}
+                    \item \textbf{Ativação (Oculta):} \textbf{ReLU} ($f(x) = \max(0,x)$), escolhida para garantir não-linearidade e convergência rápida.
+                    \item \textbf{Ativação (Saída):} \textbf{Sigmoid} ($ f(x) = \frac{1}{1 + \mathrm{e}^{-x}} $) para modelar a distribuição de probabilidade.
+                \end{itemize}
+            \end{block}
+        \end{column}
+        
+    \end{columns}
+\end{frame}
+
+\subsection{Configuração Experimental e Hiperparâmetros}
+% --- SLIDE 1: Primeiros 4 Locais ---
+\begin{frame}{Hiperparâmetros dos Modelos - Dataset SARAH}
+    \begin{table}[]
+        \centering
+        \tiny \setlength{\tabcolsep}{4pt}
+        \resizebox{\textwidth}{!}{%
+            \begin{tabular}{l l c c c c c}
+                \toprule
+                \textbf{Location} & \textbf{Target} & \textbf{Model} & \textbf{Layers} 
+                & \textbf{Neurons (Architecture)} & \textbf{Batch} & \textbf{Epoch} \\ 
+                \midrule
+
+                Nigeria - Abuja & DNI & ANN & 3 & [200, 200, 50] & 128 & 100 \\
+                \midrule
+
+                Nigeria - Akure & DNI & ANN & 3 & [200, 200, 100] & 128 & 100 \\
+                %\midrule
+
+                %Algeria - Tamarasset & GSR & ANN & 3 & [100, 100, 50] & 512 & 100 \\
+                %\midrule
+
+                %Nigeria - Borno & DSR & ANN & 2 & [100, 50] & 512 & 50 \\
+                \bottomrule
+            \end{tabular}%
+        }
+    \end{table}
+\end{frame}
+
+
+% --- SLIDE 2: Outros Países ---
+\begin{frame}{Hiperparâmetros dos Modelos - Datset TMY}
+    \begin{table}[]
+        \centering
+        \tiny \setlength{\tabcolsep}{4pt}
+        \resizebox{\textwidth}{!}{%
+            \begin{tabular}{l l c c c c c}
+                \toprule
+                \textbf{Location} & \textbf{Target} & \textbf{Model} 
+                & \textbf{Layers} & \textbf{Neurons (Architecture)}
+                & \textbf{Batch} & \textbf{Epoch} \\ 
+                \midrule
+
+                Central African Republic & GSR & ANN 
+                & 3 & [200, 200, 100] & 512 & 30 \\
+                \midrule
+
+                Egypt & GSR & ANN
+                & 3 & [200, 200, 100] & 128 & 7 \\
+                \midrule
+
+                South Africa & GSR & ANN
+                & 2 & [100, 50] & 512 & 20 \\ \midrule
+
+                Algeria  & GSR & ANN & 3 & [100, 100, 50] & 512 & 100 \\
+                \midrule
+
+                Nigeria  & DSR & ANN & 2 & [100, 50] & 512 & 50 \\
+                \bottomrule
+            \end{tabular}%
+        }
+    \end{table}
+\end{frame}
+
+
+% --- SLIDE 3: Senegal (Touba) ---
+\begin{frame}{Hiperparâmetros dos Modelos — WB-ESMAP}
+    \begin{table}[]
+        \centering
+        \tiny \setlength{\tabcolsep}{4pt}
+        \resizebox{\textwidth}{!}{%
+            \begin{tabular}{l l l c c c c}
+                \toprule
+                \textbf{Location} & \textbf{Target} & \textbf{Model}
+                & \textbf{Layers} & \textbf{Neurons (Architecture)}
+                & \textbf{Batch} & \textbf{Epoch} \\
+                \midrule
+
+                % --- TOUBA ---
+                Touba & DHI\textsubscript{RSI} & ANN
+                & 2 & [50(0.25), 50(0.25)] & 128 & 20 \\
+
+                Touba & GHI\textsubscript{pyr} & ANN
+                & 2 & [100(0.25), 200(0.25)] & 128 & 40 \\
+
+                Touba & GHI\textsubscript{Sil} & ANN
+                & 2 & [100, 50] & 128 & 30 \\
+                \midrule
+
+                % --- FATICK ---
+                Fatick & DHI\textsubscript{RSI} & ANN
+                & 2 & [100(0.25), 50(0.25)] & 128 & 20 \\
+
+                Fatick & GHI\textsubscript{pyr} & ANN
+                & 2 & [100, 50(0.25)] & 128 & 50 \\
+
+                Fatick & GHI\textsubscript{Sil} & ANN
+                & 2 & [50(0.25), 50(0.25)] & 128 & 150 \\
+
+                \bottomrule
+            \end{tabular}%
+        }
+    \end{table}
+\end{frame}
+
+
+\subsection{Explicação dos Dados e Fontes de Dados}
+\begin{frame}{Sobre os Datasets Utilizados - TMY}
+
+     \textbf{TMY (Typical Meteorological Year):}
+    \begin{itemize}
+        \item Variáveis: ano, mês, dia, hora, elevação solar, temperatura do ar, velocidade do vento a 10 m
+        \item Tamanho aproximado: \textbf{105 mil linhas} \\
+        \item \textbf{Cidades}: Northern Cape, Vakaga, Mut, Tamanrasset e Borno
+        \item \textbf{GSR}: Radiação solar global (energia direta do Sol atingindo o solo)
+        \item \textbf{DSR}: Radiação solar difusa (energia indireta espalhada por nuvens/atmosfera)
+    \end{itemize}
+
+    %\textbf{Tipos de irradiância previstos por cidade:}\\[2mm]
+    
+    %\textbf{Northern Cape, Vakaga, Mut, Tamanrasset e Borno:}
+    %\begin{itemize}
+        %\item \textbf{GSR}: Radiação solar global (energia direta do Sol atingindo o solo)
+        %\item \textbf{DSR}: Radiação solar difusa (energia indireta espalhada por nuvens/atmosfera)
+    %\end{itemize}
+    
+    %\textbf{ Touba e Fatick (Senegal):}
+    %\begin{itemize}
+        %\item \textbf{DHI\textsubscript{RSI}}: Radiação difusa horizontal medida por \textit{Rotating Shadowband Irradiometer}
+        %\item \textbf{GHI\textsubscript{Sil}}: Radiação global (direta + difusa) medida com sensor de silício
+        %\item \textbf{GHI\textsubscript{Pyr}}: Radiação global medida com piranômetro de termopilha (alta precisão e caro, o estado-da-arte)
+    %\end{itemize}
+
+     %\textbf{ Akure e Abuja (Nigeria):}
+    %\begin{itemize}
+        %\item \textbf{DNI}: Fluxo média diário de radiação na superfície normal em direção ao Sol.
+        
+    %\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Sobre os Datasets Utilizados - WB-ESMAP}
+    
+    \textbf{WB-ESMAP (World Bank - ESMAP):}
+    \begin{itemize}
+        \item Variáveis: ano, mês, dia, hora, minuto, temperatura do ar, umidade relativa, velocidade e direção do vento, velocidade calculada do vento, precipitação, pressão barométrica, limpeza do sensor, precipitação e pressão barométrica.
+        \item Tamanho aproximado: \textbf{566 mil linhas}
+        \item \textbf{Cidades}: Touba e Fatick (Senegal)
+        \item \textbf{DHI\textsubscript{RSI}}: Radiação difusa horizontal medida por \textit{Rotating Shadowband Irradiometer}
+        \item \textbf{GHI\textsubscript{Sil}}: Radiação global (direta + difusa) medida com sensor de silício
+        \item \textbf{GHI\textsubscript{Pyr}}: Radiação global medida com piranômetro de termopilha (alta precisão e caro, o estado-da-arte)
+    \end{itemize}
+    
+
+    
+\end{frame}
+
+
+\begin{frame}{Sobre os Datasets Utilizados - WB-ESMAP}
+        \textbf{SARAH (Surface Radiation Data Set - Heliosat):}
+    \begin{itemize}
+        \item Variáveis: ano, mês, dia e duração de luz do Sol
+        \item Tamanho aproximado: \textbf{12 mil linhas}
+        \item \textbf{Cidades}: Akure e Abuja (Nigeria)
+        \item \textbf{DNI}: Fluxo média diário de radiação na superfície normal em direção ao Sol.
+    \end{itemize}
+\end{frame}
+
+
+\subsection{Métricas de Avaliação de Desempenho}
+% --- SLIDE 1: Métricas de Erro (MSE e RMSE) ---
+\begin{frame}{Métricas de Avaliação: Erros}
+    \small
+    
+    O autor avaliou a precisão do modelo utilizando métricas de erro para quantificar a divergência entre os dados:
+
+    \vspace{0.3cm}
+
+    \begin{block}{Média dos Erros Absoluto (MAE)}
+        MAE é uma métrica comum usada para mensurar o valor absoluto entre o valor predito e o valor alvo, uma falha dele é não proporcionar uma visualização tão próxima dos dados. 
+        $$ MAE = \frac{1}{N} \sum_{i=1}^{N} |G_i^m - G_i^p| $$
+    \end{block}
+
+    \vspace{0.3cm}
+
+    \begin{block}{Raiz da Média dos Erros Quadrados (RMSE)}
+        RMSE é a raiz quadrada do MSE, ele trás as métricas de volta as mesmas unidades de medidas dos valores alvos.
+        $$ RMSE = \sqrt{\frac{1}{N} \sum_{i=1}^{N} (G_i^m - G_i^p)^2} $$
+    \end{block}
+\end{frame}
+
+% --- SLIDE 2: Correlação e Legenda ---
+\begin{frame}{Métricas de Avaliação: Correlação}
+    \textbf{Coeficiente de Relação (r):} \\
+    Avalia a força da correlação linear entre os dados medidos e os preditos.
+    
+    % Fórmula em destaque
+    \begin{block}{}
+        \footnotesize % Reduz um pouco a fonte SÓ da fórmula se precisar
+        $$ 
+        r = \left( \frac{ \sum_{i=1}^{N} \left( (G_i^m - \langle G_i^m \rangle) (G_i^p - \langle G_i^p \rangle) \right) }{ \sqrt{\sum_{i=1}^{N} (G_i^m - \langle G_i^m \rangle)^2} \sqrt{\sum_{i=1}^{N} (G_i^p - \langle G_i^p \rangle)^2} } \right)^2 
+        $$
+    \end{block}
+
+    \vspace{0.5cm}
+    \hrule % Linha horizontal para separar
+    \vspace{0.2cm}
+
+    % Legenda organizada em colunas para economizar espaço
+    \textbf{Legenda dos Termos:}
+    \footnotesize % Fonte menor para a legenda
+    \begin{columns}[t]
+        \begin{column}{0.45\textwidth}
+            \begin{itemize}
+                \item $N$: Número total de observações.
+                \item $G_i^m$: Valor \textbf{medido} na amostra $i$.
+                \item $G_i^p$: Valor \textbf{predito} (simulado) na amostra $i$.
+            \end{itemize}
+        \end{column}
+        
+        \begin{column}{0.45\textwidth}
+            \begin{itemize}
+                \item $\langle G^m \rangle$: Média dos valores medidos.
+                \item $\langle G^p \rangle$: Média dos valores preditos.
+            \end{itemize}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Variações de combinações de parâmetros}
+
+\begin{minipage}{0.55\textwidth}
+    \textbf{Utilizamos 2 otimizadores e 3 valores de learning rate:}
+
+    \begin{itemize}
+        \item \textbf{ADAM}: momentum adaptativo e ajuste automático de taxa de aprendizado.
+        \item \textbf{SGD}: mais simples e com melhor generalização
+              quando usado com momentum e weight decay.
+        \item \textbf{LRs}: [1e-3, 5e-4, 1e-4].
+        \item \textbf{Normalização}: Obtivemos resultados mais consistentes com normalização do dataset.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}{0.40\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{imagens/train.png} 
+\end{minipage}
+
+\end{frame}

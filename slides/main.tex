@@ -1,0 +1,64 @@
+\documentclass[9pt]{beamer}
+
+% --- Pacotes Fundamentais ---
+\usepackage[utf8]{inputenc} % Codificação de caracteres
+\usepackage[T1]{fontenc}    % Codificação de fontes
+\usepackage[brazil]{babel}  % Idioma português
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{mathtools}
+
+\usepackage{listings}
+\usepackage{xcolor}
+
+
+% --- Localização das Imagens ---
+\graphicspath{ {imagens/}}
+
+% --- Definição do Tema (Aparência) ---
+\usetheme{metropolis}  % Tema (Layout)
+\usecolortheme{default}     % Esquema de cores
+
+% --- Dados da Capa ---
+\title{Comprehensive assessment, review, and comparison of AI models for solar irradiance prediction based on different time / estimation intervals}
+\subtitle{Subtítulo (Opcional)}
+\author{
+  Daniel Gonçalves \and
+  Gustavo Miranda \and
+  Matheus Santos
+}
+\institute{ Universidade Federal de Uberlândia (UFU)}
+\date{\today}
+
+% -- Definição das refencias
+\bibliographystyle{ieeetr}
+
+\setbeamertemplate{section in toc}[circle]
+
+% --- Início do Documento ---
+\begin{document}
+
+% Slide de Título
+\begin{frame}
+    \titlepage
+\end{frame}
+
+% Slide de Sumário
+\begin{frame}{Sumário}
+    \begin{multicols}{2}
+        \tableofcontents
+    \end{multicols}
+\end{frame}
+
+% --- Seus Slides Começam Aqui ---
+
+\input{slides/introducao}
+\input{slides/metodologia}
+\input{slides/resultados}
+\input{slides/conclusao}
+\input{slides/referencias}
+
+% --- Fim do Documento ---
+\end{document}

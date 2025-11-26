@@ -1,0 +1,39 @@
+\section{Introdução}
+
+\subsection{Problema}
+\begin{frame}{Problema Apresentado}
+    \textbf{Problema do artigo:}\\[2mm]
+    A irradiância solar é fundamental para dimensionamento e operação de sistemas de energia solar. \\
+    Porém, medir irradiância diretamente é caro e tecnicamente complexo, e muitos países - especialmente em desenvolvimento - possuem poucas estações de medição.\\
+    \begin{itemize}
+        \item Medir irradiância solar diretamente é caro e tecnicamente complexo.
+        \item Muitos países em desenvolvimento possuem poucas estações de medição.
+        \item Falta de dados consistentes dificulta estimar o potencial solar local.
+        \item Não está claro qual modelo de IA funciona melhor para cada tipo de dado e timestep.
+    \end{itemize}
+\end{frame}
+
+\subsection{Objetivo}
+\begin{frame}{Objetivo}
+    \textbf{Objetivo do artigo:}\\[2mm]
+    Aplicar diferentes modelos de Redes Neuraris Artificiais e técnicas sofisticadas de Aprendizado de Máquina para prever radiação solar em diversas regiões da África.\\ 
+    A ideia é auxiliar na aplicação de energia solar em países subdesenvolvidos visto que a medição de radiação solar costuma ser cara e escassa.\\ 
+    Países analisados: \textit{Algéria, Nigéria, República Centro-Africana, Senegal, Egito e África do Sul}.\\[4mm]
+   
+
+\end{frame}
+    
+\subsection{Ferramentas do Artigo}
+\begin{frame}{Ferramentas de IA e Machine Learning usadas}
+    No artigo foram utilizadas algumas ferramentas de IA e machine learning para predição do valor de irradiação solar, essas ferramentas são:
+    MLR, PLR, DTR, RFR e XGBoost que representão os algoritmos de Machine Leaning, não são exatamente redes neurais, porém podem ser utilizados juntos.
+    ANN, CNN, LSTM e híbridos (CNN-ANN, CNN-LSTM-ANN) que são respectivamente algoritmos de redes neurais que de fato utilizam essas técnicas.
+
+    No nosso modelo acabamos por optar usar ANN ou MLP, por possuir uma implementação um pouco mais fácil
+        
+    O Data Set utilizafo no artigo foi originado de três bases diferentes: TMY, SARAH e WB-ESMAP. Nos iremos explicar sobre eles mais a frente.
+    
+    Por fim, temos o sistema de avaliação utilizado que foi RMSE, MAE e correlação.
+    
+\end{frame}
+

@@ -29,4 +29,26 @@ Este repositório contém um pipeline completo de **Deep Learning** desenvolvido
 
 ## Estrutura e Configuração
 
-O núcleo do projeto é controlado pelo dicionário `CIDADES`, que contém a configuração exata para cada local estudado.
+A estrutura do projeto é a que segue abaixo:
+```
+.
+└── solar-ann-benchmarking/
+    ├── src/
+    │   ├── dataset/
+    │   │   ├── SARAH/
+    │   │   │   ├── datasets
+    │   │   │   └── ...
+    │   │   ├── TMY/
+    │   │   │   ├── datasets
+    │   │   │   └── ...
+    │   │   └── WB/
+    │   │       ├── datasets
+    │   │       └── ...
+    │   ├── metricas/
+    │   │   └── metricas_modelos.csv
+    │   ├── output/
+    │   │   └── modelos...
+    │   └── main.ipynb
+    ├── .gitignore
+    └── artigo.pdf
+```
